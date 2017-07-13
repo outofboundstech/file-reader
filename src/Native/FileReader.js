@@ -3,7 +3,7 @@ var _outofboundstech$file_reader$Native_FileReader = function() {
 
     var scheduler = _elm_lang$core$Native_Scheduler;
 
-    function useReader(method, fileObjectToRead, as_base64=false) {
+    function useReader(method, fileObjectToRead, as_base64) {
         return scheduler.nativeBinding(function(callback){
 
             /*
