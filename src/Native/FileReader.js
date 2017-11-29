@@ -1,3 +1,5 @@
+// To use the examples, swap the commenting on the next two lines
+
 // var _user$project$Native_FileReader = function() {
 var _outofboundstech$file_reader$Native_FileReader = function() {
 
@@ -34,10 +36,10 @@ var _outofboundstech$file_reader$Native_FileReader = function() {
             }
 
             if (reader[method]) {
-                const result = reader[method](fileObjectToRead);
+                var result = reader[method](fileObjectToRead);
+                // prevent memory leak by nullifying fileObjectToRead
                 fileObjectToRead = null;
                 return result;
-                // return reader[method](fileObjectToRead);
             } else {
                 return callback(scheduler.fail({ctor : 'ReadFail'}));
             }

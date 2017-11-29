@@ -2,3 +2,4 @@ elm-stuff
 node_modules
 ignore
 .DS_Store
+yarn.lock
