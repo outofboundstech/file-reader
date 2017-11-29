@@ -20,7 +20,7 @@ var _outofboundstech$file_reader$Native_FileReader = function() {
             reader.onload = function(evt) {
                 if (as_base64) {
                     var uint8 = new Uint8Array(evt.target.result);
-                    return callback(scheduler.succeed(base64.fromByteArray(uint8)));
+                    return callback(scheduler.succeed(base64js.fromByteArray(uint8)));
                 } else {
                     return callback(scheduler.succeed(evt.target.result));
                 }

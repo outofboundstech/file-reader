@@ -21,6 +21,7 @@ module FileReader
 
     FileReaderInstance.readAsText();
     FileReaderInstance.readAsArrayBuffer();
+    FileReaderInstance.readAsBase64();
     FileReaderInstance.readAsDataURL();
 
 The module also provides helper Json Decoders for the files values on
@@ -30,7 +31,7 @@ together with a set of examples.
 
 # API functions
 
-@docs readAsTextFile, readAsArrayBuffer, readAsDataUrl
+@docs readAsTextFile, readAsArrayBuffer, readAsBase64, readAsDataUrl
 
 
 # Multi-part support
@@ -142,9 +143,18 @@ readAsArrayBuffer fileRef =
     Native.FileReader.readAsArrayBuffer fileRef
 
 
+{-| Takes a "File" or "Blob" JS object as a Json.Value
+and starts a task to read the contents and encode the result using
+a base64 encoding scheme. The String value returned in the Success
+case of the Task will be represented as a String to Elm.
+
+    readAsArrayBuffer ref
+
+-}
 readAsBase64 : FileRef -> Task Error String
 readAsBase64 fileRef =
     Native.FileReader.readAsBase64 fileRef
+
 
 {-| Takes a "File" or "Blob" JS object as a Json.Value
 and starts a task to read the contents as an DataURL (so it can
